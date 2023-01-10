@@ -21,7 +21,6 @@ const lands = ['The-Shire', 'Rivendell', 'Mordor']
 function makeMiddleEarth() {
 	console.log('1: makeMiddleEarth')
 
-
 	// 1. create a section tag with an id of middle-earth
 	const section = document.createElement('section')
 	section.id = 'middle-earth'
@@ -59,7 +58,7 @@ function makeMiddleEarth() {
 function makeHobbits() {
 	console.log('2: makeHobbits')
 	// hint: get 'The-Shire' by using its id
-	const theShire = document.getElementByID('The-Shire')
+	const theShire = document.querySelector('The-Shire')
 	//console.log('this is the shire', theShire)
 
 	// display an `unordered list` of hobbits in the shire
@@ -78,7 +77,7 @@ function makeHobbits() {
 		// append each hobbit to the ul
 		ulHobbits.appendChild(liHobbit)
 	}
-	theShire.appendChild(ulHobbits)
+	theShire.appendChild('ulHobbits') 
 
 	// hint: create a 'ul' outside the loop into which to append the 'li's
 
@@ -96,10 +95,16 @@ function keepItSecretKeepItSafe() {
 	console.log('3: keepItSecretKeepItSafe')
 
 	// create a div with an id of `'the-ring'`
+	const oneRingDiv = document.createElement('the-ring')
 
 	// give the div a class of `'magic-imbued-jewelry'`
+	oneRingDiv.className = `'magic-umbued-jewelry'`
 
 	// add the ring as a child of `Frodo`
+	const ulHobbits = document.querySelector('#hobbits')
+	const hobbitsArray = ulHobbits.children
+	const frodoLi = hobbitsArray[0]
+	frodoLi.appendChild(oneRingDiv)
 }
 
 // COMMIT YOUR WORK
