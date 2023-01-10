@@ -185,6 +185,10 @@ function beautifulStranger() {
 	console.log('7: beautifulStranger')
 
 	// change the `'Strider'` text to `'Aragorn'`
+	
+	const ulBuddies = document.getElementById('buddies').children
+	const strider = ulBuddies.item(3)
+	strider.textContent = 'Aragorn'
 }
 
 // COMMIT YOUR WORK
@@ -197,7 +201,19 @@ function beautifulStranger() {
 function forgeTheFellowShip() {
 	console.log('8: forgeTheFellowShip')
 	// create a new div called `'the-fellowship'` within `rivendell`
+	const rivendell = document.getElementById('Rivendell')
+	const fellowshipDiv = document.createElement('div')
+	fellowshipDiv.id = 'the-fellowship'
+	rivendell.appendChild(fellowshipDiv)
 	// add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
+
+	const hobbits = document.getElementById('hobbits')
+	const hobbitsArray = hobbits.children
+	for (let i = 0; i < 4; i++) {
+		alert(hobbitsArray[0].innerText + " has been added to the Fellowship.")
+		fellowshipDiv.appendChild(hobbitsArray[0])
+
+	}
 	// after each character is added make an alert that they // have joined your party
 
 	// NOTE: This won't change what you see in the browser.  Use your Elements tab of your Inspector tools to make sure that it worked.
